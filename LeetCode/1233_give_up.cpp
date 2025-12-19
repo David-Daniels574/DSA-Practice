@@ -43,10 +43,3 @@ public:
 };
 
 
-class Solution {
-public:
-    vector<string> removeSubfolders(vector<string>& folder) {
-       unordered_set<string>s;
-       vector<string> ans; 
-    }
-};
