@@ -130,3 +130,27 @@ public:
     return k; 
     }
 };
+
+
+class Solution {
+public:
+
+    bool is_valid(vector<int> piles, int k , int h){
+
+        if (k<piles.size()){
+                return false;
+            }
+            
+        while (h>0){
+            
+            
+            h--;
+        }
+        
+        
+    }
+
+    int minEatingSpeed(vector<int>& piles, int h) {
+        
+    }
+};
