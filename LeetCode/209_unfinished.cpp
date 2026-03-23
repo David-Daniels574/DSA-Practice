@@ -12,52 +12,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// greedy fails
-class Solution
-{
+class Solution {
 public:
-    int minSubArrayLen(int target, vector<int> &nums)
-    {
-
-        int sum = accumulate(nums.begin(), nums.end(), 0);
-
-        if (sum < target)
-        {
-            return 0;
-        }
-
-        int size = nums.size();
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int sum = 0;
         int start = 0;
-        int end = size - 1;
-        while (true)
-        {
-            if (nums[start] > nums[end])
-            {
-                // kill the end
-                // first check
+        int ans = nums.size() + 1;
 
-                if (sum - nums[end] < target)
-                {
-                    break;
-                }
+        for (int end = 0; end < nums.size(); end++) {
+            sum += nums[end];
 
-                sum -= nums[end];
-                end--;
-                size--;
-            }
-            else
-            {
-                if (sum - nums[start] < target)
-                {
-                    break;
-                }
+            while (sum >= target) {
+                ans = min(ans, end - start + 1);
                 sum -= nums[start];
                 start++;
-                size--;
             }
         }
 
-        return size;
+        return ans == nums.size() + 1 ? 0 : ans;
     }
 };
-

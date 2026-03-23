@@ -13,58 +13,38 @@ const ld EPS = 1e-9;
 using namespace std;
 using vi = vector<int>;
 
-//approach 1 , no sorting , but duplicates in final answer
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        vector<vector<int>>ans;
-        unordered_map<int,int>mp;
-        for (int i = 0; i < nums.size(); i++){
-            mp[nums[i]]=i;
-        }
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> ans;
 
-        for(int i=0 ; i<nums.size(); i++){
-            int a=nums[i];
-            for(int j=i+1 ; j<nums.size(); j++){
-                int b =nums[j];
+        int n = nums.size();
+        for (int i = 0; i < n; i++) {
+            if (nums[i] > 0)
+                break;
+            if (i > 0 && nums[i] == nums[i - 1])
+                continue;
 
-                int diff = -(a+b);
-                if(mp.count(diff) && mp[diff]!=i && mp[diff]!=j){
-                    ans.push_back({a,b,diff});
+            int l = i + 1, r = n - 1;
+            while (l < r) {
+                int sum = nums[i] + nums[l] + nums[r];
+                if (sum == 0) {
+                    ans.push_back({nums[i], nums[l], nums[r]});
+                    l++;
+                    r--;
+
+                    while (l < r && nums[l] == nums[l - 1])
+                        l++;
+                    while (l < r && nums[r] == nums[r + 1])
+                        r--;
+                } else if (sum < 0) {
+                    l++;
+                } else {
+                    r--;
                 }
             }
         }
-    return ans;
-    }
-};
-
-class Solution {
-public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-
-        for (int i = 0; i < nums.size(); i++){
-            int target=-nums[i];
-            int j=i+1,k=nums.size()-1;
-            while (j<k){
-                int check=nums[j]+nums[k];
-
-                if (check+target >0)
-                {
-                    k--;
-                }
-                else if (check+target <0)
-                {
-                    j++;
-                }
-                else{
-                    
-                }
-                 
-                
-            }
-            
-        }
-        
+        return ans;
     }
 };

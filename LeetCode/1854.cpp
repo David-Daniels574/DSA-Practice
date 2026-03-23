@@ -54,3 +54,26 @@ public:
         return 0;
     }
 };
+
+//less cursed
+class Solution {
+public:
+    int maximumPopulation(vector<vector<int>>& logs) {
+        vector<int>arr(2051,0);
+
+        for(int i=0 ; i<logs.size(); i++){
+            arr[logs[i][0]]++;
+            arr[logs[i][1]]--;
+        }
+        int max_pop=INT_MIN;
+        int year=0;
+        for(int i=1 ; i<arr.size(); i++){
+            arr[i]+=arr[i-1];
+            if(arr[i]>max_pop){
+                max_pop=arr[i];
+                year=i;
+            }
+        }
+    return year;
+    }
+};

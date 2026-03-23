@@ -39,6 +39,4 @@ Algorithm
         If alternatingElementsCount is greater than or equal to k, increment result by 1.
         Update lastColor to colors[index].
     Return result.
-
-
 */
