@@ -47,33 +47,36 @@ struct ListNode* rotateRight(struct ListNode* head, int k) {
     return head;
 }
 
-//GENUINE PRO SOLUTION
-/**
- * @param {ListNode} head
- * @param {number} k
- * @return {ListNode}
- */
-var rotateRight = function(head, k) {
-    if (!head || k === 0) return head;
 
-    let length = 1;
-    let tail = head;
-    while (tail.next) {
-        tail = tail.next;
+
+struct ListNode* rotateRight(struct ListNode* head, int k) {
+    if (!head || k == 0) return head;
+
+    // Step 1: Find length and tail
+    int length = 1;
+    struct ListNode* tail = head;
+    while (tail->next) {
+        tail = tail->next;
         length++;
     }
 
+    // Step 2: Normalize k
     k = k % length;
-    if (k === 0) return head;
+    if (k == 0) return head;
 
-    tail.next = head; // form a cycle
-    let stepsToNewHead = length - k;
-    let newTail = tail;
+    // Step 3: Make it circular
+    tail->next = head;
+
+    // Step 4: Find new tail
+    int stepsToNewHead = length - k;
+    struct ListNode* newTail = tail;
     while (stepsToNewHead--) {
-        newTail = newTail.next;
+        newTail = newTail->next;
     }
 
-    let newHead = newTail.next;
-    newTail.next = null;
+    // Step 5: Break the cycle
+    struct ListNode* newHead = newTail->next;
+    newTail->next = NULL;
+
     return newHead;
-};
+}
