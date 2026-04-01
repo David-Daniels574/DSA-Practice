@@ -19,6 +19,8 @@ This repository contains:
 ✅ **DSA Implementations**: Covers arrays, linked lists, stacks, queues, trees, graphs, sorting, and more.  
 ✅ **DAA Algorithms**: Includes Divide & Conquer, Dynamic Programming, Greedy, Backtracking, and lab experiments.  
 ✅ **LeetCode and Codeforces Solutions**: Practice problems solved with optimal approaches.  
+✅ **GFG Practice**: Additional GeeksforGeeks problem-focused implementations in `gfg/`.  
+✅ **Notes Collection**: Topic-wise PDFs in `Data-Structures-and-Algorithms-Notes/` and OOPS resources in `OOPS/`.  
 ✅ **Well-structured Code**: Each section is organized for easy navigation and understanding.  
 ✅ **Useful for Interview Prep & Competitive Programming**  
 
@@ -27,31 +29,33 @@ This repository contains:
 ## 📂 Folder Structure  
 
 ```
-DSA-Repo/
-├── LICENSE                      # License information
-├── README.md                    # This README file
-├── .gitignore                   # Git ignore file
-│
-├── DAA/                         # Design and Analysis of Algorithms
-│   ├── Backtracking/            # Backtracking algorithms
-│   ├── Divide and Conquer/      # Divide and Conquer algorithms
-│   ├── DP/                      # Dynamic Programming
-│   ├── Greedy/                  # Greedy algorithms
-│   ├── Lab/                     # Lab assignments 
-│
-├── DS/                          # Data Structures
-│   ├── array/                   # Array operations
-│   ├── graphs/                  # Graphs 
-│   ├── hash/                    # Hashing algorithms
-│   ├── linked list/             # Linked List operations 
-│   ├── queue/                   # Queue implementations 
-│   ├── sorting/                 # Sorting algorithms 
-│   ├── stack/                   # Stack operations 
-│   ├── trees/                   # Tree structures 
-|   ├── Lab/                     # Lab assignments 
-│
-├── Codeforces/                  # Codeforces problem solutions
-└── LeetCode/                    # LeetCode problem solutions
+DSA-Practice/
+├── .gitignore
+├── file_structure.txt
+├── LICENSE
+├── README.md
+├── Codeforces/                         # Codeforces solutions (C++/Python)
+├── College/
+│   ├── DSU.cpp
+│   ├── DAA/
+│   │   ├── Code/
+│   │   └── Lab/
+│   └── DS/
+│       ├── array/
+│       ├── graphs/
+│       ├── hash/
+│       ├── Lab/
+│       ├── linked list/
+│       ├── queue/
+│       ├── sorting/
+│       ├── stack/
+│       └── trees/
+├── Data-Structures-and-Algorithms-Notes/   # Topic-wise PDF notes
+├── gfg/                                    # GeeksforGeeks practice files
+├── LeetCode/                               # LeetCode solutions
+└── OOPS/
+    ├── code/
+    └── Notes.pdf
 ```
 
 ---
@@ -64,8 +68,8 @@ DSA-Repo/
 
 ### Clone the Repository  
 ```sh
-git clone https://github.com/your-username/DSA-Repo.git
-cd DSA-Repo
+git clone https://github.com/anonymous-574/DSA-Practice.git
+cd DSA-Practice
 ```
 
 ### Running Code  
