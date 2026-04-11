@@ -13,6 +13,29 @@ const ld EPS = 1e-9;
 using namespace std;
 using vi = vector<int>;
 
+//recursion
+class Solution {
+public:
+    int ans=0;
+    void recur(int n){
+        if(n<0){
+            return;
+        }
+        else if(n==0){
+            ans++;
+            return;
+        }
+        recur(n-1);
+        recur(n-2);
+    }
+    int climbStairs(int n) {
+    recur(n);
+    return ans;   
+    }
+};
+
+
+
 class Solution {
 public:
     int climbStairs(int n) {

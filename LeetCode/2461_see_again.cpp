@@ -6,42 +6,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-class Solution {
-public:
-    long long maximumSubarraySum(vector<int>& nums, int k) {
-        unordered_set<int> s;
-        long long ans=0;
-        long long curr=0;
-
-        for (int i = 0; i < k; i++)
-        {
-            if (s.find(nums[i])==s.end())
-            {
-                //not found
-                s.insert(nums[i]);
-                curr+=nums[i];
-                
-            }
-            else
-            {
-              // go ahead till there is no match
-            }
-        }
-
-        ans=max(ans,curr);
-        
-        for (int i = 0; i < nums.size()-k; i++)
-        {
-            s.insert(nums[i]);
-            curr-=nums[i];
-            curr+=nums[i+k];
-        }
-    return ans;
-    }
-};
-*/
-
 class Solution {
 public:
     long long maximumSubarraySum(vector<int>& nums, int k) {

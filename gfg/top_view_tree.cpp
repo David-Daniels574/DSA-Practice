@@ -13,7 +13,6 @@ const ld EPS = 1e-9;
 using namespace std;
 using vi = vector<int>;
 
-/*
 class Node {
   public:
     int data;
@@ -26,7 +25,6 @@ class Node {
         right = nullptr;
     }
 };
-*/
 
 /*
 The top view of a binary tree can be found using BFS. A queue stores each node
