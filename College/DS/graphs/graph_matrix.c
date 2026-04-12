@@ -149,7 +149,6 @@ void bfs(graph * g,int start)
     {
         int node = dequeue(q);
         
-
         for (int j = 0; j < g->no_of_vertices; j++)
         {
             //if edge is 1 and node not visited
